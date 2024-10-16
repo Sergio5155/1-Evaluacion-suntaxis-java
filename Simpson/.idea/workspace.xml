@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="870294f1-60c3-4d27-80eb-4d2c4ee45fc2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/simpsonprogfuncional/SimpsonProgFuncional.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Simpson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
