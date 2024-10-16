@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="870294f1-60c3-4d27-80eb-4d2c4ee45fc2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simpsonprogfuncional/SimpsonProgFuncional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simpsonprogfuncional/SimpsonProgFuncional.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +34,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.SimpsonProgFuncional">
+  <component name="RunManager" selected="Application.Simpson">
     <configuration name="Simpson" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Simpson" />
       <module name="Simpson" />
@@ -42,7 +42,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpsonProgFuncional" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="SimpsonProgFuncional" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="simpsonprogfuncional.SimpsonProgFuncional" />
       <module name="Simpson" />
       <extension name="coverage">
@@ -55,11 +55,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.SimpsonProgFuncional" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
