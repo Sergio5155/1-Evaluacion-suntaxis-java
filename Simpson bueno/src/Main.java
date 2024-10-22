@@ -81,7 +81,6 @@ public class Main {
                 return; // No mover
             case 'F': // Final del juego
                 System.out.println("¡Has llegado al final! ¡Felicidades!");
-                return;
             case 'L': // Espacio libre
                 break;
         }
