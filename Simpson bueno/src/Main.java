@@ -1,14 +1,11 @@
 import java.util.Random;
 import java.util.Scanner;
-
 public class Main {
     private static final int MAX_FILA_T = 10;
     private static final int MAX_COLUMNA_T = 10;
     private static char[][] tablero;
     private static int filaBart, columnaBart;
     private static int vidas = 5;
-
-    // Método para imprimir el tablero
     private static void printTablero() {
         for (int i = 0; i < MAX_FILA_T; i++) {
             for (int j = 0; j < MAX_COLUMNA_T; j++) {
@@ -17,8 +14,6 @@ public class Main {
             System.out.println();
         }
     }
-
-    // Rellenar todas las casillas con 'L'
     private static void inicializarTablero() {
         for (int i = 0; i < MAX_FILA_T; i++) {
             for (int j = 0; j < MAX_COLUMNA_T; j++) {
@@ -26,8 +21,6 @@ public class Main {
             }
         }
     }
-
-    // Colocar un carácter en una posición aleatoria libre
     private static void colocarEnCasillaAleatoria(char caracter, int cantidad) {
         Random aleatorio = new Random();
         int filaAleatorio, columnaAleatorio;
@@ -40,8 +33,6 @@ public class Main {
             tablero[filaAleatorio][columnaAleatorio] = caracter;
         }
     }
-
-    // Mover a Bart en función de la dirección ingresada
     private static void moverBart(char direccion) {
         int nuevaFila = filaBart;
         int nuevaColumna = columnaBart;
@@ -91,19 +82,14 @@ public class Main {
         columnaBart = nuevaColumna;
         tablero[filaBart][columnaBart] = 'B'; // Nueva posición de Bart
     }
-
     public static void main(String[] args) {
         tablero = new char[MAX_FILA_T][MAX_COLUMNA_T];
         Scanner lector = new Scanner(System.in);
-
-        // Inicializar tablero y colocar personajes y objetos
         inicializarTablero();
         colocarEnCasillaAleatoria('B', 1); // Colocar a Bart
         colocarEnCasillaAleatoria('H', 10); // Colocar 5 Homeros
         colocarEnCasillaAleatoria('M', 10); // Colocar 5 muros
         tablero[MAX_FILA_T - 1][MAX_COLUMNA_T - 1] = 'F'; // Final en (9,9)
-
-        // Encontrar la posición inicial de Bart
         for (int i = 0; i < MAX_FILA_T; i++) {
             for (int j = 0; j < MAX_COLUMNA_T; j++) {
                 if (tablero[i][j] == 'B') {
@@ -113,23 +99,16 @@ public class Main {
                 }
             }
         }
-
-        // Imprimir el tablero inicial
         printTablero();
-
-        // Juego principal
         while (vidas > 0 && tablero[MAX_FILA_T - 1][MAX_COLUMNA_T - 1] != 'B') {
             System.out.println("Mover a Bart: (W: Arriba, A: Izquierda, S: Abajo, D: Derecha)");
             char movimiento = lector.nextLine().toUpperCase().charAt(0); // Convertir a mayúscula
-
             moverBart(movimiento);
             printTablero();
-
             if (vidas <= 0) {
                 System.out.println("Game Over, Bart ha perdido todas sus vidas.");
             }
         }
-
         if (tablero[MAX_FILA_T - 1][MAX_COLUMNA_T - 1] == 'B') {
             System.out.println("¡Felicidades, has llegado al final del juego!");
         }
