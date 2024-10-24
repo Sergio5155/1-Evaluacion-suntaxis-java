@@ -1,12 +1,19 @@
 import java.util.Random;
 
 public class Main {
+    private static  int filas = 3;
+  private static   int columnas = 9;
+   private static  int matriz[][] = new int[filas][columnas];
+   private static Random aleatorio = new Random();
+    private static void imprimirtablero(){
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println("");
+        }
+    }
     public static void main(String[] args) {
-        int filas = 3;
-        int columnas = 9;
-        int matriz[][] = new int[filas][columnas];
-        Random aleatorio = new Random();
-
         // Llenar la matriz con números aleatorios
         for (int j = 0; j < columnas; j++) {
             int rangoInferior = j * 10;
@@ -16,12 +23,7 @@ public class Main {
         }
 
         System.out.println("Matriz original:");
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                System.out.print(matriz[i][j] + " ");
-            }
-            System.out.println("");
-        }
+        imprimirtablero();
 
         // Ordenar cada columna de menor a mayor
         for (int j = 0; j < columnas; j++) {
@@ -37,12 +39,7 @@ public class Main {
             }
         }
 
-        System.out.println("\nMatriz ordenada por columnas:");
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                System.out.print(matriz[i][j] + " ");
-            }
-            System.out.println("");
-        }
+        System.out.println("Matriz ordenada por columnas:");
+        imprimirtablero();
     }
 }
