@@ -22,7 +22,7 @@ public class Main {
         }
         //Metemos el escaner y hacemos un bucle para que lea 10 numeros y los compare con la matriz de numeros
         Scanner leer=new Scanner(System.in);
-        for (int i = 1; i <11; i++) {
+        for (int i = 0; i <10; i++) {
             System.out.println("Matriz Usuario:");
             //Mostramos la matriz de Usuario
             for (int q = 0; q <filas; q++) {
@@ -31,7 +31,7 @@ public class Main {
                 }
                 System.out.println();
             }
-            System.out.println("Dame el numero "+i);
+            System.out.println("Dame el numero "+(i+1));
             int NumUsua=leer.nextInt();
             //Creamos el bucle para que compare el numero que ha puesto el usuario con cada numero de la matriz de numeros
             for (int j = 0; j <filas; j++) {
