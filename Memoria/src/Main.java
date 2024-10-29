@@ -16,10 +16,13 @@ public class Main {
         // Mostrar el tablero de números por 2 segundos
         System.out.println("Tablero con los números:");
         mostrarTableroNumeros();
-        Thread.sleep(2000); // Espera de 2 segundos para mostrar el tablero
-        limpiarPantalla();  // Limpia la pantalla después de la pausa
 
-        // Comienza el juego ocultando el tablero
+        // Pausar el hilo principal durante 2 segundos
+        Thread.sleep(2000);
+
+        // Limpiar pantalla
+        limpiarPantalla();
+
         System.out.println("Comienza el juego de memoria:");
         while (!juegoTerminado) {
             mostrarTableroUsuario();
@@ -38,7 +41,6 @@ public class Main {
 
             // Verificar si las posiciones contienen el mismo número
             if (tableroNumeros[fila1][col1] == tableroNumeros[fila2][col2] && !(fila1 == fila2 && col1 == col2)) {
-                // Si acierta, mostrar el número en el tablero del usuario
                 tableroUsuario[fila1][col1] = String.valueOf(tableroNumeros[fila1][col1]);
                 tableroUsuario[fila2][col2] = String.valueOf(tableroNumeros[fila2][col2]);
                 System.out.println("¡Correcto!");
@@ -46,7 +48,6 @@ public class Main {
                 System.out.println("Incorrecto, inténtalo de nuevo.");
             }
 
-            // Verificar si el juego ha terminado
             verificarJuegoTerminado();
         }
 
@@ -55,19 +56,17 @@ public class Main {
         scanner.close();
     }
 
-    // Método para generar el tablero de números con parejas aleatorias sin return
+    // Método para generar el tablero de números con parejas aleatorias
     public static void generarTableroAleatorio() {
         int[] pares = new int[16];
         int numero = 1;
 
-        // Crear las parejas de números del 1 al 8 (dos veces cada uno)
         for (int i = 0; i < 16; i += 2) {
             pares[i] = numero;
             pares[i + 1] = numero;
             numero++;
         }
 
-        // Barajar el arreglo de pares manualmente
         Random rand = new Random();
         for (int i = 0; i < pares.length; i++) {
             int j = rand.nextInt(16);
@@ -76,7 +75,6 @@ public class Main {
             pares[j] = temp;
         }
 
-        // Llenar el tablero 4x4 con los números barajados
         int index = 0;
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
@@ -116,20 +114,20 @@ public class Main {
 
     // Método para verificar si el juego ha terminado
     public static void verificarJuegoTerminado() {
-        juegoTerminado = true;  // Suponemos que el juego ha terminado
+        juegoTerminado = true;
 
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 if (tableroUsuario[i][j].equals("X")) {
-                    juegoTerminado = false;  // Si hay alguna "X", el juego no ha terminado
-                    return;  // Salir de la función al encontrar una "X"
+                    juegoTerminado = false;
+                    return;
                 }
             }
         }
     }
 
-    // Método para simular limpiar la pantalla
-    public static void limpiarPantalla() throws InterruptedException {
-        System.out.print("\n".repeat(50)); // Imprime 50 líneas en blanco para simular la limpieza de consola
+    // Método para limpiar la pantalla
+    public static void limpiarPantalla() {
+        System.out.print("\n".repeat(50)); // Simula limpiar la consola
     }
 }
