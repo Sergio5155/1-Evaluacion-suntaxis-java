@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        int filas = 10;
+        int filas = 3;
         int columnas = 9;
         int tablero[][] = new int[filas][columnas];
 
