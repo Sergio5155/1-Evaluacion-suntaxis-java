@@ -68,7 +68,34 @@ public class Main {
             tableroVader[filaAleatorio][columnaAleatorio] = caracter;
         }
     }
+    private static void teletransportarYoda() {
+        Random aleatorio = new Random();
+        int nuevaFila, nuevaColumna;
 
+        do {
+            nuevaFila = aleatorio.nextInt(MAX_FILA_T);
+            nuevaColumna = aleatorio.nextInt(MAX_COLUMNA_T);
+        } while (tableroYoda[nuevaFila][nuevaColumna] != 'L');
+
+        tableroYoda[filaYoda][columnaYoda] = 'L'; // Liberamos la posición actual
+        filaYoda = nuevaFila; // Actualizamos la posición de Yoda
+        columnaYoda = nuevaColumna;
+        tableroYoda[filaYoda][columnaYoda] = 'Y'; // Colocamos a Yoda en la nueva posición
+    }
+
+    private static void teletransportarVader() {
+        Random aleatorio = new Random();
+        int nuevaFila2, nuevaColumna2;
+        do {
+            nuevaFila2 = aleatorio.nextInt(MAX_FILA_T);
+            nuevaColumna2 = aleatorio.nextInt(MAX_COLUMNA_T);
+        } while (tableroVader[nuevaFila2][nuevaColumna2] != 'L');
+
+        tableroVader[filaVader][columnaVader] = 'L'; // Liberamos la posición actual
+        filaVader = nuevaFila2; // Actualizamos la posición de Vader
+        columnaVader = nuevaColumna2;
+        tableroVader[filaVader][columnaVader] = 'V'; // Colocamos a Vader en la nueva posición
+    }
     private static int pedirPasos() {
         Scanner lector = new Scanner(System.in);
         int pasos;
@@ -97,6 +124,21 @@ public class Main {
                 case 'S': // Abajo
                     nuevaFila++;
                     break;
+                case 'Q': //Diagonal arriba izquierda
+                    nuevaFila--;
+                    nuevaColumna--;
+                case 'E': //Diagonal arriba derecha
+                    nuevaFila--;
+                    nuevaColumna++;
+                case 'Z': //Diagonal abajo izquierda
+                    nuevaFila++;
+                    nuevaColumna--;
+                case 'C': //Diagonal abajo derecha
+                    nuevaFila++;
+                    nuevaColumna++;
+                case'P':
+                    nuevaColumna--;
+                    nuevaFila++;
                 default:
                     System.out.println("Movimiento inválido");
                     return;
@@ -117,6 +159,9 @@ public class Main {
                     return;
                 case 'F':
                     System.out.println("¡Has llegado al final! ¡Felicidades!");
+                case'P':
+                    System.out.println("Te has encontrado una pocion");
+                    teletransportarYoda();
                 case 'L':
                     break;
             }
@@ -146,6 +191,21 @@ public class Main {
                 case 'S': // Abajo
                     nuevaFila2++;
                     break;
+                case 'Q': //Diagonal arriba izquierda
+                    nuevaFila2--;
+                    nuevaColumna2--;
+                case 'E': //Diagonal arriba derecha
+                    nuevaFila2--;
+                    nuevaColumna2++;
+                case 'Z': //Diagonal abajo izquierda
+                    nuevaFila2++;
+                    nuevaColumna2--;
+                case 'C': //Diagonal abajo derecha
+                    nuevaFila2++;
+                    nuevaColumna2++;
+                case'P':
+                    nuevaColumna2--;
+                    nuevaFila2++;
                 default:
                     System.out.println("Movimiento inválido");
                     return;
@@ -166,6 +226,9 @@ public class Main {
                     return;
                 case 'F':
                     System.out.println("¡Has llegado al final! ¡Felicidades!");
+                case'P':
+                    System.out.println("Te has encontrado una pocion");
+                    teletransportarVader();
                 case 'L':
                     break;
             }
@@ -186,9 +249,11 @@ public class Main {
         colocarEnCasillaAleatoriaYoda('Y', 1);
         colocarEnCasillaAleatoriaYoda('D', 5);
         colocarEnCasillaAleatoriaYoda('M', 5);
+        colocarEnCasillaAleatoriaYoda('P',5);
         colocarEnCasillaAleatoriaVader('V', 1);
         colocarEnCasillaAleatoriaVader('R', 5);
         colocarEnCasillaAleatoriaVader('M', 5);
+        colocarEnCasillaAleatoriaVader('P',5);
         tableroYoda[MAX_FILA_T - 1][MAX_COLUMNA_T - 1] = 'F';
         tableroVader[MAX_FILA_T - 1][MAX_COLUMNA_T - 1] = 'F';
 
