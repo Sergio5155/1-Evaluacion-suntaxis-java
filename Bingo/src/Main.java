@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Main {
-    private static  int filas = 3;
+    private static  int filas = 8;
   private static   int columnas = 9;
    private static  int matriz[][] = new int[filas][columnas];
    private static Random aleatorio = new Random();
